@@ -9,10 +9,12 @@ class LoginModules {
     readonly userModal: Locator
     readonly okModalButton: Locator
     readonly SignInButton: Locator
+    readonly incorrectCredentialsMessage: Locator;
 
     constructor(page:Page){
         this.usernameInput= page.locator('#username');
         this.passwordInput= page.locator('#password');
+        this.incorrectCredentialsMessage= page.locator('[style*="block"]');
         this.userRadioButton=page.getByRole('radio', { name: 'User' })  //locator('input[value="user"]')
         this.adminRadioButton=page.getByRole('radio',{ name: "Admin"})  //locator('input[value="admin"]')
         this.termAndCondiditonsCheckbox = page.locator('#terms')

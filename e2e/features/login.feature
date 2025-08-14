@@ -13,3 +13,14 @@ Feature: Login functionality on Rahul Shetty Academy practice page
       | rahulshettyacademy | learning  | User |Student |
       | rahulshettyacademy | learning  | Admin |Teacher| 
       | rahulshettyacademy | learning  | Admin |Consutant| 
+
+  @Negative
+  Scenario Outline: Login with invalid credentials
+    When the user enters the following information username "<username>" password "<password>" role "<role>" and major "<major>"
+    Then the user should see an error message for incorrect credentials
+  
+    Examples:
+      | username           | password  | role |major |
+      | rahulshettyacademy | wrongpass  | User |Student |
+      | rahulshetty | learning  | Admin |Teacher| 
+      | rahulshetty | wrongpass  | Admin |Consultant|

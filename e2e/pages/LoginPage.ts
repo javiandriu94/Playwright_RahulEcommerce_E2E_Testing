@@ -16,6 +16,14 @@ class LoginPage  {
     async fillUserAndPasswordInput (username: string, password: string) {
         await this.login.usernameInput.fill(username);
         await this.login.passwordInput.fill(password);
+        if ((username !== 'rahulshettyacademy') || (password !== 'learning') ) {
+            await this.login.incorrectCredentialsMessage.isVisible();
+            
+        }
+    }
+
+    async incorrectCredentialsMessage () {
+        await expect(this.login.incorrectCredentialsMessage).toContainText('Incorrect username/password');
     }
 
     async clickRadioButton(role:string) {

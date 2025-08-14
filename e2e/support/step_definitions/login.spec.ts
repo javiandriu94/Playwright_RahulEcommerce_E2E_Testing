@@ -33,3 +33,12 @@ Then(
     await expect(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');
   }
 );
+
+Then(
+  'the user should see an error message for incorrect credentials', 
+  async function () {
+    const poManager = new POManager(this.page);   
+    const login = poManager.getLoginPage();
+    await login.incorrectCredentialsMessage();
+  }
+)
