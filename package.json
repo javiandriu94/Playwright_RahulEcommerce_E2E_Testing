@@ -1,0 +1,30 @@
+{
+  "name": "playwright_rahulecommerce_e2e_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "test:cucumber": "cucumber-js --require-module ts-node/register --require e2e/support/world.ts --require e2e/support/hooks.ts --require e2e/support/**/*.ts e2e/features/**/*.feature"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javiandriu94/Playwright_RahulEcommerce_E2E_Testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javiandriu94/Playwright_RahulEcommerce_E2E_Testing/issues"
+  },
+  "homepage": "https://github.com/javiandriu94/Playwright_RahulEcommerce_E2E_Testing#readme",
+  "dependencies": {
+    "@cucumber/cucumber": "^12.1.0",
+    "playwright": "^1.54.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
