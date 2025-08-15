@@ -42,3 +42,22 @@ Then(
     await login.incorrectCredentialsMessage();
   }
 )
+
+When('the user clicks on the blinking text',
+  async function () {
+    const poManager = new POManager(this.page);   
+    const login = poManager.getLoginPage();
+    await login.verifyBlinkingDocumentLink();
+    
+  }
+)
+
+Then('should be redirected to the document request page',
+  async function () {
+    const poManager = new POManager(this.page);   
+    const login = poManager.getLoginPage();
+    const newPage = await login.clickBlinkingText();
+    await newPage.waitForSelector('.preloader', { state: 'hidden', timeout: 15000 });
+    await expect(newPage).toHaveURL('https://rahulshettyacademy.com/documents-request');
+  }
+)

@@ -58,5 +58,20 @@ class LoginPage  {
     async clickSignUpButton () {
         await this.login.SignInButton.click()
     }
+
+    async verifyBlinkingDocumentLink () {
+        await expect(this.login.documentLink).toBeVisible();
+        await expect(this.login.documentLink).toHaveAttribute('class', 'blinkingText');
+    }
+
+    async clickBlinkingText () {
+        const [newPage] = await Promise.all([
+            this.page.waitForEvent('popup'),
+            this.login.documentLink.click()
+        ]);
+        return newPage;
+
+        await expect(newPage).toHaveURL('https://rahulshettyacademy.com/angularpractice/documents-request');
+    }
 }
 export default LoginPage;

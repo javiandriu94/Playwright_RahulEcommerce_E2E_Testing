@@ -24,3 +24,8 @@ Feature: Login functionality on Rahul Shetty Academy practice page
       | rahulshettyacademy | wrongpass  | User |Student |
       | rahulshetty | learning  | Admin |Teacher| 
       | rahulshetty | wrongpass  | Admin |Consultant|
+
+  @BlinkingText
+  Scenario: Verify blinking text on login page and click on the document link
+    When the user clicks on the blinking text
+    Then should be redirected to the document request page

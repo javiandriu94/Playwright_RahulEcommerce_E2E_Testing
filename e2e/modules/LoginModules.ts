@@ -10,6 +10,7 @@ class LoginModules {
     readonly okModalButton: Locator
     readonly SignInButton: Locator
     readonly incorrectCredentialsMessage: Locator;
+    readonly documentLink: Locator
 
     constructor(page:Page){
         this.usernameInput= page.locator('#username');
@@ -22,6 +23,7 @@ class LoginModules {
         this.userModal=page.locator('#myModal');
         this.okModalButton= page.locator('#okayBtn')
         this.SignInButton=page.locator('#signInBtn')
+        this.documentLink = page.locator('[href*="documents-request"]')
        
     }
 }
